@@ -18,7 +18,7 @@ app.use('/products',products)
 
 const connect= require('./config/db')
 
-const port=  8000
+const port=  8080
 
 app.listen(port, async()=>{
 
