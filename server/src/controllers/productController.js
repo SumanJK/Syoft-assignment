@@ -29,4 +29,16 @@ router.post('/',async(req, res)=>{
   }
 });
 
+//delete a product
+router.delete('/:id',async(req, res)=>{
+  try{
+
+    const products= await Product.findByIdAndDelete(req.params.id)
+    res.status(201).send(products)
+    
+  }catch(err){
+    res.status(404).send(err.message)
+  }
+});
+
 module.exports = router;
